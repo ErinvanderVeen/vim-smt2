@@ -8,64 +8,59 @@ if exists("b:current_syntax")
   finish
 endif
 
+setlocal iskeyword+=-
+
 syn keyword smt2Command
-			\assert
-			\check-sat
-			\check-sat-assuming
-			\declare-const
-			\declare-datatype
-			\declare-datatypes
-			\declare-fun
-			\declare-sort
-			\define-fun
-			\define-fun-rec
-			\define-funs-rec
-			\define-sort
-			\echo
-			\exit
-			\get-assertions
-			\get-assignment
-			\get-info
-			\get-model
-			\get-option
-			\get-proof
-			\get-unsat-assumptions
-			\get-unsat-core
-			\get-value
-			\pop
-			\push
-			\reset
-			\reset-assertions
-			\set-info
-			\set-logic
-			\set-option
+			\ assert
+			\ check-sat
+			\ check-sat-assuming
+			\ declare-const
+			\ declare-datatype
+			\ declare-datatypes
+			\ declare-fun
+			\ declare-sort
+			\ define-fun
+			\ define-fun-rec
+			\ define-funs-rec
+			\ define-sort
+			\ echo
+			\ exit
+			\ get-assertions
+			\ get-assignment
+			\ get-info
+			\ get-model
+			\ get-option
+			\ get-proof
+			\ get-unsat-assumptions
+			\ get-unsat-core
+			\ get-value
+			\ pop
+			\ push
+			\ reset
+			\ reset-assertions
+			\ set-info
+			\ set-logic
+			\ set-option
 
 syn keyword smt2Sort Bool Int Real Nat Array Set
 syn keyword smt2Bool false true
 syn keyword smt2Operator
-			\xor
-			\or
-			\and
-			\=>
-			\distinct
-			\select
-			\store
-			\emptySet
-			\univSet
-			\singleton
-			\union
-			\inters
-			\in
-			\subset
-			\-
-			\+
-			\*
-			\<=
-			\<
-			\>=
-			\>
+			\ xor
+			\ or
+			\ and
+			\ distinct
+			\ select
+			\ store
+			\ emptySet
+			\ univSet
+			\ singleton
+			\ union
+			\ inters
+			\ in
+			\ subset
 
-syn match smt2Option ":([a-zA-Z-])+"
+syn match smt2Operator "[-+*<>/=]\+"
+syn match smt2Option ":[a-zA-Z-]\+"
 syn match smt2Comment ";.*$"
 
 
@@ -75,4 +70,5 @@ hi def link smt2Command             Statement
 hi def link smt2Sort                Type
 hi def link smt2Bool                Boolean
 hi def link smt2Operator            Operator
+hi def link smt2Option              PreProc
 hi def link smt2Comment             Comment
